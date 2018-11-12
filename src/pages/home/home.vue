@@ -1,16 +1,20 @@
 <template>
 	<div id="home">
-		高东浩
+		<home-header></home-header>
 	</div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
+
 export default {
 	name: 'home',
+	components: {
+		HomeHeader
+	}
 }
 </script>
 
-<style lang="stylus">
-#home
-	font-size 50px
+<style lang="stylus" scoped>
+
 </style>
