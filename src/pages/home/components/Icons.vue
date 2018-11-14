@@ -18,54 +18,20 @@
 <script>
 export default {
 	name: 'homeIcons',
+	props: {
+		list: Array
+	},
 	data () {
 		return {
 			swiperOption: {
 				pagination: '.swiper-pagination',
-			},
-			iconsList: [{
-				id: '0001',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-				desc: '景点门票'
-			},{
-				id: '0002',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-				desc: '北京必游'
-			},{
-				id: '0003',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-				desc: '一日游'
-			},{
-				id: '0004',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-				desc: '文化古迹'
-			},{
-				id: '0005',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-				desc: '景点门票'
-			},{
-				id: '0006',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-				desc: '北京必游'
-			},{
-				id: '0007',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-				desc: '一日游'
-			},{
-				id: '0008',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-				desc: '文化古迹'
-			},{
-				id: '0009',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-				desc: '动植物园'
-			}]
+			}
 		}
 	},
 	computed: {
 		pages () {
 			const pages = []
-			this.iconsList.forEach((item, index) => {
+			this.list.forEach((item, index) => {
 				const page = Math.floor( index / 8);
 				if(!pages[page]) {
 					pages[page] = []
@@ -103,13 +69,13 @@ export default {
 				bottom 0.44rem
 				.icon-img-content
 					display block
-					height 100%
+					height 80%
 					margin 0 auto
 			.icon-desc
 				position absolute
 				left 0
 				right 0
-				bottom 0
+				bottom 0.06rem
 				height 0.44rem
 				line-height 0.44rem
 				color $darkTextColor

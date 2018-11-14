@@ -2,7 +2,7 @@
 	<div class="recommend">
 		<div class="title">猜你喜欢</div>
 		<ul>
-			<li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+			<li class="item border-bottom" v-for="item of list" :key="item.id">
 				<img class="item-img" :src="item.imgUrl" alt="">
 				<div class="item-info">
 					<p class="item-title">{{item.title}}</p>
@@ -17,30 +17,8 @@
 <script>
 export default {
 	name: 'HomeRecommed',
-	data () {
-		return {
-			recommendList: [{
-				id: '0001',
-				imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-				title: '北京欢乐谷',
-				desc: '世界五大宫之首，穿越与您近在咫尺'
-			},{
-				id: '0002',
-				imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-				title: '北京欢乐谷',
-				desc: '世界五大宫之首，穿越与您近在咫尺'
-			},{
-				id: '0003',
-				imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/e4/e48857f2ce5e53a7a3.img.jpg_200x200_8ee069fe.jpg',
-				title: '北京欢乐谷',
-				desc: '世界五大宫之首，穿越与您近在咫尺'
-			},{
-				id: '0004',
-				imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/c2/c2d6eb9c771a3df3a3.img.jpg_200x200_3585386c.jpg',
-				title: '北京欢乐谷',
-				desc: '世界五大宫之首，穿越与您近在咫尺'
-			}]
-		}
+	props: {
+		list: Array
 	}
 }
 </script>
