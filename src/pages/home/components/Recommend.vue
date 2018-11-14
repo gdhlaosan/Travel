@@ -53,7 +53,7 @@ export default {
 			.item-button
 				margin-top 0.3rem
 				background-color #ff9300
-				color #fff
+				color $whiteTextColor
 				padding 0 0.2rem
 				border-radius 0.06rem
 			
