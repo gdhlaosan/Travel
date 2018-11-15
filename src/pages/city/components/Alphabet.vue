@@ -23,7 +23,8 @@ export default {
 	data () {
 		return {
 			startStatus: false,
-			startY: 0
+			startY: 0,
+			timer: null
 		}
 	},
 	updated () {
@@ -57,8 +58,9 @@ export default {
 					if(index >= 0 && index < this.letters.length) {
 						this.$emit('change', this.letters[index])
 					}
-				},16)
+				},100)
 			}
+			
 		},
 		handleEnd () {
 			this.startStatus = false
