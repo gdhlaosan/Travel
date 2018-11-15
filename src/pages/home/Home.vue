@@ -39,7 +39,7 @@ export default {
 	},
 	methods: {
 		getHomeInfo () {
-			axios.get('/home/api').
+			axios.get('/api/home').
 				then(this.getHomeInfoSucc)
 		},
 		getHomeInfoSucc (res) {
