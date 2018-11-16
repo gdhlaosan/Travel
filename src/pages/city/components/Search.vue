@@ -5,7 +5,10 @@
 		</div>
 		<div class="search-content" v-show="keyword" ref="content">
 			<ul>
-				<li class="item border-bottom" v-for="item in list" :key="item">{{item}}</li>
+				<li class="item border-bottom" 
+					v-for="item in list" 
+					:key="item"
+					@click="handleClick(item)">{{item}}</li>
 				<li class="item border-bottom" v-show="isListShow">没有找到匹配项</li>
 			</ul>
 		</div>
@@ -25,6 +28,9 @@ export default {
 			list: [],
 			timer: null
 		}
+	},
+	mounted () {
+		this.scroll = new BScroll(this.$refs.content)
 	},
 	computed: {
 		isListShow () {
@@ -52,9 +58,14 @@ export default {
 			},100)
 		}
 	},
-	mounted () {
-		this.scroll = new BScroll(this.$refs.content)
+	methods: {
+		handleClick (city) {
+			this.$store.commit('changCity', city)
+			//编程式导航
+			this.$router.push('/')
+		}
 	}
+	
 }
 </script>
 
