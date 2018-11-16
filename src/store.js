@@ -1,34 +1,19 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import state from "@/store/state.js"
+import mutations from "@/store/mutations.js"
+import actions from "@/store/actions.js"
 
 Vue.use(Vuex);
 
-let defaultCity = "上海"
-try {
-	if(localStorage.city) {
-		defaultCity = localStorage.city
-	}
-}catch (e) {
-
-}
-
 export default new Vuex.Store({
-	state: {
-	  	city: defaultCity
-	},
-	//同步数据
-	mutations: {
-	  	changCity (state, city) {
-	  		state.city = city
-	  		try {
-	  			localStorage.city = city
-	  		}catch (e) {
-	  			
-	  		}
-	  	}
-	},
-	//异步数据
-	actions: {
-	  	
+	state,
+	mutations,
+	actions,
+	//类似于computed
+	getters: { 
+		doubleCity (state) {
+			return state.city + ' ' + state.city
+		}
 	}
 });
