@@ -1,5 +1,6 @@
 const mockdata = require('./mock/index.json');
 const mockCityData = require('./mock/city.json');
+const mockDerailData = require('./mock/detail.json');
 
 module.exports={
   devServer: {
@@ -10,6 +11,9 @@ module.exports={
 	    })
 	    app.get('/api/city',(req,res,next)=>{
 	        res.json(mockCityData);
+	    })
+	    app.get('/api/detail',(req,res,next)=>{
+	        res.json(mockDerailData);
 	    })
     }
   }
