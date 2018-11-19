@@ -58,6 +58,7 @@ export default {
 		top 0
 		bottom 0
 		background-color #000
+		z-index 5
 		.wrapper
 			width 100%
 			height 0
