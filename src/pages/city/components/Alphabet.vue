@@ -5,7 +5,7 @@
 			:key="item"
 			:ref="item"
 			@click="handleClick"
-			@touchstart="handleStart"
+			@touchstart.prevent="handleStart"
 			@touchmove="handleMove"
 			@touchend="handleEnd"
 			>
@@ -58,7 +58,7 @@ export default {
 					if(index >= 0 && index < this.letters.length) {
 						this.$emit('change', this.letters[index])
 					}
-				},100)
+				},50)
 			}
 			
 		},

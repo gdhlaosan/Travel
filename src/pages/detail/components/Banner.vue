@@ -12,7 +12,7 @@
 		</div>
 		<fade-animation>
 			<common-gallary 
-				:imgs="bannerImgs"
+				:imgs="gallaryImgs"
 				v-show="isShowGallary"
 				@close="gallaryChangeClose"
 			></common-gallary>
@@ -37,7 +37,6 @@ export default {
 	data () {
 		return {
 			isShowGallary: false,
-			bannerImgs: this.gallaryImgs
 		}
 	},
 	methods: {

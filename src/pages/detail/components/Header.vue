@@ -45,11 +45,10 @@ export default {
 			}
 		}
 	},
-	activated () {
+	mounted () {
 		window.addEventListener('scroll', this.handleScroll)
 	},
-	deactivated () {
-		//解绑
+	beforeDestroy () {
 		window.removeEventListener('scroll', this.handleScroll)
 	}
 }
